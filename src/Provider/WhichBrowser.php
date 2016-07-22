@@ -74,7 +74,7 @@ class WhichBrowser extends AbstractProvider
      */
     public function __construct()
     {
-        if (! file_exists('vendor/' . $this->getPackageName() . '/composer.json')) {
+	if (! file_exists(DIR . '/../../../../' . $this->getPackageName() . '/composer.json') && ! file_exists(DIR . '/../../vendor/' . $this->getPackageName() . '/composer.json')) {
             throw new PackageNotLoadedException('You need to install the package ' . $this->getPackageName() . ' to use this provider');
         }
     }
